@@ -12,4 +12,4 @@
 - Project approved.  Moved directory, files, and set up new repository.  Tested for functionality and accuracy.  Research on custom user model.
 
 **5 Jan**
--  
+-  <placeholder>
