@@ -86,12 +86,14 @@ h. Code naming convention
          - Activate Models  
          - Testing  
    - [ ] c. Build CSS Structure with place holders  
-         - Setup static templates, images, and static folders  
+         - Setup static templates, images, and static folders
+         - Build initial logo (to fit templates)
          - Testing
    - [ ] d. Build user functionality (login/logout/register)   
-         - Customer User Model  
+         - Customer User Model
+         - Add to base.html for consistency on website
    - [ ] e. Build user registration page and login templates  
-         - Configure with Django  
+         - Configure with Django (built in templates) 
    - [ ] f. Show welcome user info (on login)
          - Testing and QA
 
