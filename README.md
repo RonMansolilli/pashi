@@ -212,3 +212,4 @@ The crime_index could be derived in a number of ways; however, for the purposes 
 **Future Development:**
   - Build project to utilize ARCgis to display maps and locations visually.  
   - Add Walkability index as a search parameter
+  - Add user -> public comments or a rating system for each property
