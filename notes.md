@@ -24,4 +24,5 @@
 
 **8 Jan**  
 
-- Complete framework (as is - i.e. move on).  
+- Complete framework (as is - i.e. move on). Re-do on logo, built mini-logo, finished formatting landing page with skeleton framework and place holders.  
+- 
