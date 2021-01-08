@@ -32,11 +32,11 @@ Obtaining affordable housing in the City of Portland (CoP) is challenging; findi
 ### Project Milestones
 
 
-  | Week 1                  | Week 2                        | Week 3                          | Week 4                        |
-  | ----------------------- | ----------------------------- | ------------------------------- | ----------------------------- |
-  | S1. Admin Start/Finish  | S2. (MVP) Framing Finish      | S3b. (MVP) Backend Finish       | S5. (MVP) UX Dev Start/Finish |
-  | S2. Framing Start       | S3a. Prep Data Start/Finish   | S4. (MVP) Frontend Start/Finish | S6. Testing/Rollout           |
-  |                         | S3b. Backend Start            |                                 |                               |
+  | Week 1                       | Week 2                        | Week 3                          | Week 4                        |
+  | -----------------------      | ----------------------------- | ------------------------------- | ----------------------------- |
+  | S1. ~~Admin Start/Finish~~~  | ~~S2. (MVP) Framing Finish~~  | S3b. (MVP) Backend Finish       | S5. (MVP) UX Dev Start/Finish |
+  | S2. ~~Framing Start~~        | S3a. Prep Data Start/Finish   | S4. (MVP) Frontend Start/Finish | S6. Testing/Rollout           |
+  |                              | S3b. Backend Start            |                                 |                               |
 
 ### Languages/Libraries/Frameworks
 
@@ -77,7 +77,7 @@ h. Code naming convention
 ### S2. App Framework
 
   **Tasks:**
-   - [ ] a. Build django framework in project folder  
+   - [x] a. Build django framework in project folder  
          - Start Django project documentation  
          - Create app
          - Configure settings, admin, urls
@@ -85,16 +85,18 @@ h. Code naming convention
          - See section S3b  
          - Activate Models  
          - Testing  
-   - [ ] c. Build CSS Structure with place holders  
+   - [x] c. Build CSS Structure with place holders  
+         - Configure, customize CSS Skeleton framework as basis for underlying webpage
          - Setup static templates, images, and static folders
-         - Build initial logo (to fit templates)
+         - Build and design base.html file
+         - Build initial logo, and title banner (Graphics work)
          - Testing
-   - [ ] d. Build user functionality (login/logout/register)   
-         - Customer User Model
-         - Add to base.html for consistency on website
-   - [ ] e. Build user registration page and login templates  
-         - Configure with Django (built in templates) 
-   - [ ] f. Show welcome user info (on login)
+   - [x] d. Ensure compatibility with mobile devices (**PRIORITY**)
+   - [x] e. Build user functionality (login/logout/register)   
+         - Custom User Model
+   - [x] f. Build user registration page and login templates  
+         - Impletment with Django (built in templates) 
+   - [x] g. Show welcome user info (on login)
          - Testing and QA
 
 ### S3a. Dataset Prep
@@ -192,7 +194,8 @@ The crime_index could be derived in a number of ways; however, for the purposes 
   - [ ] f. Ensure all output is returned based on crime_index in descending order.  
   - [ ] g. Format output to include a Save option_box
   - [ ] h. Dynamically provide user_notes text box on selection
-  - [ ] i. <blank placeholder for more tasks>
+  - [ ] i. Add dynamic content to display the who, why, how, resources documentation
+  - [ ] j. <blank placeholder for more tasks>
 
 ### S5. Formatting Display (UXI)
 
