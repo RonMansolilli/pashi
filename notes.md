@@ -18,5 +18,10 @@
 - Attempted coup/insurrection in U.S. - little distracted, but still managed to build out CSS Framework.
 
 **7 Jan**
-- <IDEA> add public comments for properties?  Maybe it's counter-productive - maybe just a simple thumbs up/down, etc..</IDEA>  Continued building out framework, built initial logo, 
+- Continued building out framework (lots of CSS manipulation, research, and trial/error), built initial logo, formatting UI.  
+  - <IDEA> add public comments for properties?  Maybe it's counter-productive - maybe just a simple thumbs up/down, etc..</IDEA>
   - Issue trying to making column match previous column height.
+
+**8 Jan**  
+
+- Complete framework (as is - i.e. move on).  
