@@ -19,3 +19,4 @@
 
 **7 Jan**
 - <IDEA> add public comments for properties?  Maybe it's counter-productive - maybe just a simple thumbs up/down, etc..</IDEA>  Continued building out framework, built initial logo, 
+  - Issue trying to making column match previous column height.
