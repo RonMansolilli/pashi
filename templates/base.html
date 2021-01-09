@@ -16,10 +16,17 @@
 
       <!-- Header --------------------------------------------------->
       <div class="row">
-        <div class="eight columns" style="margin-top: 1%">
-          Blah blah<img src="./pashi_logo.jpg" alt="pashi_logo" style="width:200px;height:400px;object-fit: cover;">
+        <div class="ten columns" style="margin-top: 1%">
+          <div style="border: none; text-align: center;">
+            <img src="/media/images/pashi_logo1.jpg" alt="pashi_logo" style="object-fit: fill; width: 100%">
+            <br>
+            <i>"Giving those in need an ability to find, not only affordable, but SAFE housing in the City of Portland."</i>
+          </div>
         </div>
-        <div class="four columns" style="margin-top: 1%; text-align: right; padding-right: 5%;">
+        <div class="two columns" style="margin-top: 1%; ">
+          <div style="border: none; text-align: center;">
+          <img src="/media/images/pashi_small_logo.jpg" alt="pashi_small_logo" style="height: 70px; width: auto">
+          <br>
           {% if user.is_authenticated %}
             Hi {{ user.username }}!
             <p><a href="{% url 'logout' %}">Log Out</a></p>
@@ -27,24 +34,29 @@
             <a href="{% url 'login' %}">Log In</a><br>
             <a href="{% url 'users_app:signup' %}">Sign Up</a>
           {% endif %}
+          </div>
         </div>
       </div>
+      <hr>
 
       <!-- Begin html/django code  ------------------------------------>
       <div class="row">
         <div class="twelve columns" style="margin-top: 1%">
+    
           <main>
             {% block content %}
             {% endblock %}
           </main>
+          <hr>
+
         </div>
       </div>
 
       <!-- Footer --------------------------------------------------------->
       <div class="row">
-        <div class="four columns" style="margin-top: 1%"><center>empty</center></div>
-        <div class="four columns" style="margin-top: 1%"><center><i>Here is where footer stuff will go.</i></center></div>
-        <div class="four columns" style="margin-top: 1%"><center>empty</center></div>
+        <div class="ten columns" ><center><i>BIG Footer</i></center></div>
+        <div class="two columns" ><center><i>small Footer</i></center></div>
+        {% comment %} <div class="four columns" style="margin-top: 1%"><center>empty</center></div> {% endcomment %}
       </div>
     </div>
 

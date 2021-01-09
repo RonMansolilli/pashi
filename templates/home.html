@@ -4,13 +4,6 @@
 
 {% block content %}
 
-  {% if user.is_authenticated %}
-    Hi {{ user.username }} - why aren't you working better fool!!
-    <p><a href="{% url 'logout' %}">Log Out</a></p>
-  {% else %}
-    <p>You are not logged in</p>
-    <a href="{% url 'login' %}">Log In</a> |
-    <a href="{% url 'users_app:signup' %}">Sign Up</a>
-  {% endif %}
+<h3><center>This is where all the content will go I hope.</center></h3>
 
 {% endblock %}
