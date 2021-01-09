@@ -34,7 +34,7 @@ Obtaining affordable housing in the City of Portland (CoP) is challenging; findi
 
   | Week 1                       | Week 2                        | Week 3                          | Week 4                        |
   | -----------------------      | ----------------------------- | ------------------------------- | ----------------------------- |
-  | S1. ~~Admin Start/Finish~~~  | ~~S2. (MVP) Framing Finish~~  | S3b. (MVP) Backend Finish       | S5. (MVP) UX Dev Start/Finish |
+  | S1. ~~Admin Start/Finish~~   | ~~S2. (MVP) Framing Finish~~  | S3b. (MVP) Backend Finish       | S5. (MVP) UX Dev Start/Finish |
   | S2. ~~Framing Start~~        | S3a. Prep Data Start/Finish   | S4. (MVP) Frontend Start/Finish | S6. Testing/Rollout           |
   |                              | S3b. Backend Start            |                                 |                               |
 
