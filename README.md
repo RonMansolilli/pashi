@@ -1,5 +1,5 @@
 ## PASHI Documentation ##
-*Last updated:  04 Jan 2020*
+*Last updated:  08 Jan 2020*
 
 Working Link:  https://mansolilli.com/pashi/  
 
