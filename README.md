@@ -158,14 +158,14 @@ The crime_index could be derived in a number of ways; however, for the purposes 
   ]
   ```
   ```
-  user_data = [                  // Standard user data
-    {'id' : sysAssigned,
+  ~~user_data = [                  // Standard user data
+    {'id' : sysAssigned,           // Update 1/6 - Utilized custom data model
     'userName : 'string',
     'userPwd : sysAssigned,
     'firstName' : 'string',
     'lastName' : 'string',
     }
-  ]
+  ]~~
   ```
   ```
   join_table = [                 // Join table will link users to saved housing units
