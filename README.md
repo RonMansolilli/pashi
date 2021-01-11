@@ -157,7 +157,7 @@ The crime_index could be derived in a number of ways; however, for the purposes 
     }
   ]
   ```
-  **Update 1/6 - Utilized custom data model**
+  **Update 1/6 - Utilized custom user data model**
   ~~user_data = [                  // Standard user data
     {'id' : sysAssigned,         
     'userName : 'string',
