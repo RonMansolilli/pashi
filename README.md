@@ -217,4 +217,8 @@ The crime_index could be derived in a number of ways; however, for the purposes 
   - Add user -> public comments or a rating system for each property
   - populate about, how, why, who
   - add more crime datasets (i.e. prior years) to average crime over time
+  - Add rental costs per unit
+  - Notes on what "affordable" means and who would 'qualify' for affordable housing
+  
+  
   
