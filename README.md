@@ -216,3 +216,5 @@ The crime_index could be derived in a number of ways; however, for the purposes 
   - Add Walkability index as a search parameter
   - Add user -> public comments or a rating system for each property
   - populate about, how, why, who
+  - add more crime datasets (i.e. prior years) to average crime over time
+  
