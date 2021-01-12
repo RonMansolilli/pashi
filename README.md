@@ -64,10 +64,12 @@ a. Utilizing modified Agile Framework with MVP milestones at set stages.
 
 f. Datasets
    - Primary:  
-     - Crime_Data *Obtained from CoP Crime Datasets  
-     - Housing_Data *Obtain from CoP or Oregon State data website (API)  
+     - Crime_Data *Obtained from CoP Crime Datasets (2020 data).  Downloaded: 11 January 2021.  
+     https://www.portlandoregon.gov/police/71978  
+     - Housing_Data *Obtain from Oregon State data website (Nov 2019 data).  Downloaded: 11 January 2021.   
+     https://data.oregon.gov/Health-Human-Services/Multnomah-County/k3h4-vcgb
    - Secondary:    
-     - Zip-code info associated with unique Portland Areas  
+     - Zip-code info associated with unique Portland Neighborhoods  
      - Zip-code info associated with housing data addresses  
 
 h. Code naming convention  
