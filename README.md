@@ -11,12 +11,13 @@ Future Link:  https://mansolilli.com/pashi/
 
 Obtaining affordable housing in the City of Portland (CoP) is challenging; finding affordable housing that is also safe and desirable is even more challenging especially for those in need.  This app is designed to allow users to view their options and make informed decisions based on a location factoring in its safety for themselves and/or families.
 
-### Features
+### Goals -> Features
 
 - List all available units in the Portland Area designated ‘affordable’
 - List out safest units in Portland area (ranked)
 - Allow users to login, establish profile, save units, and make notes.  
 - Designed for mobile use (those in need may not have access to computers)
+- Database designed for future expansion (more info)
 
 ### Project Outline
 
@@ -224,6 +225,9 @@ The crime_index could be derived in a number of ways; however, for the purposes 
   - Add specificity based on the address (i.e. instead of basing crime on an 'area' base it on a radius from a specific location - the address of the unit).  
   - Add quick facts, e.g. number of crimes overall, etc.  
   - Add single page on city, state, and private resources
+  - Future data for presentation/analysis (already implemented in database):  neighborhood, avgRent, rentLow, rentHigh, walkIndex, quadrant, numCrimes, violenceIndex, crimeTime, avgHomeValue
+  
+  
   
   
   
