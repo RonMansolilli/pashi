@@ -219,9 +219,12 @@ The crime_index could be derived in a number of ways; however, for the purposes 
   - Add user -> public comments or a rating system for each property
   - populate about, how, why, who
   - add more crime datasets (i.e. prior years) to average crime over time
-  - Add rental costs per unit
+  - Add rental costs per unit in location (based on zip or neighborhood)
   - Notes on what "affordable" means and who would 'qualify' for affordable housing
-  - Add specificity based on the address (i.e. instead of basing crime on an 'area' base it on a radius from a specific location - the address of the unit).   
+  - Add specificity based on the address (i.e. instead of basing crime on an 'area' base it on a radius from a specific location - the address of the unit).  
+  - Add quick facts, e.g. number of crimes overall, etc.  
+  - Add single page on city, state, and private resources
+  
   
   
   
