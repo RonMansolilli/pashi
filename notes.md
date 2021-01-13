@@ -26,3 +26,20 @@
 
 - Complete framework (as is - i.e. move on). Re-do on logo, built mini-logo, finished formatting landing page with skeleton framework and place holders.  
 - 
+
+**11 Jan**
+
+- Research, tutorials, and refamiliarization with SQL, excel scripting/macro, and data manipulation.
+
+**12 Jan** 
+
+- Building .csv files for database implementation, researched and downloaded latest datasets from City of Portland.  Began data manipulation.  Added zips to 350 rows.  
+
+**13 Jan**
+ 
+- Building out master .csv file. 
+- Future fields:  neighborhood, avgRent, rentLow, rentHigh, walkIndex, quadrant, numCrimes, violenceIndex, crimeTime
+
+**14 Jan**
+
+- xxx
