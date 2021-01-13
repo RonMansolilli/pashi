@@ -11,13 +11,12 @@ Future Link:  https://mansolilli.com/pashi/
 
 Obtaining affordable housing in the City of Portland (CoP) is challenging; finding affordable housing that is also safe and desirable is even more challenging especially for those in need.  This app is designed to allow users to view their options and make informed decisions based on a location factoring in its safety for themselves and/or families.
 
-### Goals -> Features
+### Features
 
 - List all available units in the Portland Area designated ‘affordable’
 - List out safest units in Portland area (ranked)
 - Allow users to login, establish profile, save units, and make notes.  
 - Designed for mobile use (those in need may not have access to computers)
-- Database designed for future expansion (more info)
 
 ### Project Outline
 
@@ -65,12 +64,10 @@ a. Utilizing modified Agile Framework with MVP milestones at set stages.
 
 f. Datasets
    - Primary:  
-     - Crime_Data *Obtained from CoP Crime Datasets (2020 data).  Downloaded: 11 January 2021.  
-     https://www.portlandoregon.gov/police/71978  
-     - Housing_Data *Obtain from Oregon State data website (Nov 2019 data).  Downloaded: 11 January 2021.   
-     https://data.oregon.gov/Health-Human-Services/Multnomah-County/k3h4-vcgb
+     - Crime_Data *Obtained from CoP Crime Datasets  
+     - Housing_Data *Obtain from CoP or Oregon State data website (API)  
    - Secondary:    
-     - Zip-code info associated with unique Portland Neighborhoods  
+     - Zip-code info associated with unique Portland Areas  
      - Zip-code info associated with housing data addresses  
 
 h. Code naming convention  
@@ -146,17 +143,38 @@ The crime_index could be derived in a number of ways; however, for the purposes 
   **Models**
 
   ```
-  crime_index = [               // Crime index
-    {'id' : sysAssigned,        // * Utilize to rank locations
-    ‘zipCode#’: intValue,}      // * Ties broken by overall crime occurence
+  neighborhood_info = [               // Crime index
+    {'id' : sysAssigned,              // * Utilize to rank locations
+    ‘zipCode’: 'string',}             // * Ties broken by overall crime occurence
+    'safetyIndex' : 'int',
+    'numCrimes' : 'int',
+    'neighborhood' : 'string',        // FUTURE DATA from HERE down *************
+    'quadrant' : 'strng',            
+    'avgRent' : 'int',
+    'rentLow' : 'int',
+    'rentHigh' : 'int',
+    'walkIndex' : 'int',
+    'violenceIndex' : 'int',          
+    'crimeTime' : 'string',           //AM or PM
+    'avgHomeValue' : 'int',   
   ]
   ```
   ```
-  housing_data = [             // Housing data with incorporated zip data
+  housing_data = [                  // Housing data with incorporated pkid=zipCode
     {'id' : idNum,
+    'projectName' : 'string',
+    'management' : 'string',
     'zipCode' : 'string',
+    'neighborhood' : 'string',      // FUTURE DATA
     'address' : 'string',
-    'phoneContact' : 'string',
+    'contactPhone' : 'string',
+    'singleRoom' : 'int',
+    'studio' : 'int',
+    '1_bedroom' : 'int',
+    '2_bedroom' : 'int',
+    '3_bedroom' : 'int',
+    '4_bedroom' : 'int',
+    '
     }
   ]
   ```
@@ -220,15 +238,8 @@ The crime_index could be derived in a number of ways; however, for the purposes 
   - Add user -> public comments or a rating system for each property
   - populate about, how, why, who
   - add more crime datasets (i.e. prior years) to average crime over time
-  - Add rental costs per unit in location (based on zip or neighborhood)
+  - Add rental costs per unit
   - Notes on what "affordable" means and who would 'qualify' for affordable housing
-  - Add specificity based on the address (i.e. instead of basing crime on an 'area' base it on a radius from a specific location - the address of the unit).  
-  - Add quick facts, e.g. number of crimes overall, etc.  
-  - Add single page on city, state, and private resources
-  - Future data for presentation/analysis (already implemented in database):  neighborhood, avgRent, rentLow, rentHigh, walkIndex, quadrant, numCrimes, violenceIndex, crimeTime, avgHomeValue
-  
-  
-  
   
   
   
