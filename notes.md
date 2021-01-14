@@ -42,4 +42,4 @@
 
 **14 Jan**
 
-- xxx
+- Utilized SQL scripts to populate data in working crime csv file - populated zip codes, crime count,  .  
