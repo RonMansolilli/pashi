@@ -205,7 +205,7 @@ The crime_index could be derived in a number of ways; however, for the purposes 
     }  
   ]~~ 
 
-### S4. Frontend  
+### S4. Frontend (UX)
 
   **Features:**
   - Should allow anonymous users access to search functionality (but no saving/notes)
@@ -225,7 +225,7 @@ The crime_index could be derived in a number of ways; however, for the purposes 
   - [ ] i. Add dynamic content to display the who, why, how, resources documentation
   - [ ] j. <blank placeholder for more tasks>
 
-### S5. Formatting Display (UXI)
+### S5. Formatting Display (UI)
 
   **Tasks:**
   - [ ] a. Polish display for professional appearance
