@@ -250,6 +250,7 @@ The crime_index could be derived in a number of ways; however, for the purposes 
   - Notes on what "affordable" means and who would 'qualify' for affordable housing
   - Utilize additional model fields to provide more useful UX (see Section 3b for fields)
   - Add a violenceIndex and propertyIndex to gain a better picture of the type of crime occuring in zip
+  - Add images of housing units
   
   
 ### Addendum: Challenges
