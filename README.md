@@ -136,31 +136,16 @@ The crime_index could be derived in a number of ways; however, for the purposes 
 ### S3b. Backend
 
   **Tasks:**
-  - [ ] a. Build out Models
+  - [ ] a. Build out Models (see below)
   - [ ] a. Build out API
   - [ ] a. Test models
 
   **Models**
 
   ```
-  neighborhood_info = [               // Crime index
-    {'id' : sysAssigned,              // * Utilize to rank locations
-    ‘zipCode’: 'string',}             // * Ties broken by overall crime occurence
-    'safetyIndex' : 'int',
-    'numCrimes' : 'int',
-    'neighborhood' : 'string',        // FUTURE DATA from HERE down *************
-    'quadrant' : 'strng',            
-    'avgRent' : 'int',
-    'rentLow' : 'int',
-    'rentHigh' : 'int',
-    'walkIndex' : 'int',
-    'violenceIndex' : 'int',          
-    'crimeTime' : 'string',           //AM or PM
-    'avgHomeValue' : 'int',   
-  ]
-  ```
-  ```
-  housing_data = [                  // Housing data with incorporated pkid=zipCode
+  //Housing data - pulls neighborhood info.  Saved via Join Table by users.  
+  
+  housing_data = [                  
     {'id' : idNum,
     'projectName' : 'string',
     'management' : 'string',
@@ -178,24 +163,45 @@ The crime_index could be derived in a number of ways; however, for the purposes 
     }
   ]
   ```
-  **Update 1/6 - Utilized custom user data model**
-  ~~user_data = [                  // Standard user data
-    {'id' : sysAssigned,         
-    'userName : 'string',
-    'userPwd : sysAssigned,
-    'firstName' : 'string',
-    'lastName' : 'string',
-    }
-  ]~~
   ```
+  // Many to one relationship with housing_data  
+    
+  neighborhood_info = [               // Neighborhood information model
+    {'id' : sysAssigned,              
+    ‘zipCode’: 'string',}             // pkID for linking with housing data
+    'safetyIndex' : 'int',            // Utilized to rank locations 
+    'numCrimes' : 'int',              // Ties broken by overall crime occurence
+    'neighborhood' : 'string',        // FUTURE DATA from HERE down *************
+    'quadrant' : 'strng',             
+    'avgRent' : 'int',
+    'rentLow' : 'int',
+    'rentHigh' : 'int',
+    'walkIndex' : 'int',
+    'violenceIndex' : 'int',          
+    'crimeTime' : 'string',           //AM or PM
+    'avgHomeValue' : 'int',   
+  ]
+  ```
+  ```
+  //Join table (many-to-many relationship) between users and housing_data  
+    
   join_table = [                 // Join table will link users to saved housing units
     {'id' : sysAssigned,         // many-to-many relationship btw user_data and housing_data
     'user_data.id' : integer,
     'housing_data.id' : integer,
-    'userNotes' : 'string',
+    'userNotes' : 'string',       //User can take notes on the property
     }
   ]
   ```
+  **Update 1/6 - Utilized custom user data model**  
+  ~~user_data = [                  // Standard user data  
+    {'id' : sysAssigned,         
+    'userName : 'string',  
+    'userPwd : sysAssigned,  
+    'firstName' : 'string',  
+    'lastName' : 'string',  
+    }  
+  ]~~ 
 
 ### S4. Frontend  
 
@@ -240,6 +246,9 @@ The crime_index could be derived in a number of ways; however, for the purposes 
   - add more crime datasets (i.e. prior years) to average crime over time
   - Add rental costs per unit
   - Notes on what "affordable" means and who would 'qualify' for affordable housing
+  - Utilize additional model fields to provide more useful UX (see Section 3b for fields)
+  
+  
   
   
   
