@@ -151,7 +151,7 @@ The crime_index could be derived in a number of ways; however, for the purposes 
     'projectName' : 'string',
     'management' : 'string',
     'zipCode' : 'string',
-    'neighborhood' : 'string',      // FUTURE DATA
+    'neighborhood' : 'string',      // FUTURE DATA from HERE down *************
     'address' : 'string',
     'contactPhone' : 'string',
     'singleRoom' : 'int',
