@@ -42,4 +42,10 @@
 
 **14 Jan**
 
-- Utilized SQL scripts to populate data in working crime csv file - populated zip codes, crime count,  .  
+- Utilized SQL scripts to populate data in working crime csv file - populated zip codes, crime count, crime severity.  Deleted non-matching or null values in both datasets (especially those with non-matching zip_codes).  
+
+
+
+
+
+
