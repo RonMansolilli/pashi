@@ -151,7 +151,7 @@ The crime_index could be derived in a number of ways; however, for the purposes 
     'projectName' : 'string',
     'management' : 'string',
     'zipCode' : 'string',
-    'neighborhood' : 'string',      // FUTURE DATA from HERE down *************
+    'neighborhood' : 'string',      // FUTURE DATA field (i.e. Laurelhurst, etc.)
     'address' : 'string',
     'contactPhone' : 'string',
     'singleRoom' : 'int',
@@ -181,6 +181,7 @@ The crime_index could be derived in a number of ways; however, for the purposes 
     'violenceIndex' : 'int',          
     'crimeTime' : 'string',           //AM or PM
     'avgHomeValue' : 'int',   
+    }
   ]
   ```
   ```
