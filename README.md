@@ -102,12 +102,13 @@ h. Code naming convention
 ### S3a. Dataset Prep
 
   **Tasks:**
-  - [ ] a. Pull datasets from CoP or figure out if an API call would work
-  - [ ] b. Pull zip code dataset based on Portland neighborhoods
-  - [x] c. Pull 2020 crime dataset from CoP crime data site and evaluate
-  - [ ] d. Build out crime_index as noted in methodology
-  - [ ] e. Build out housing_data as noted in methodology
-
+  - [x] a. Pull datasets from CoP or figure out if an API call would work
+  - [x] b. Pull zip code dataset based on Portland neighborhoods
+  - [x] c. Pull 2020 crime dataset from CoP crime data site, evaluate and scrub
+  - [x] d. Build working files for crime and housing data
+  - [ ] d1. Build new fields (required for functionality), populate via scripts, compute crime_index per zipcode
+  - [ ] d2. Finalize CSV for neighborhood_info, housing_info
+  - ~~[ ] e. Build out crime_index as noted in methodology~~ (no longer required, changed to neighborhood_info)
 
   **Crime Data Methodology:**
 ```
@@ -164,9 +165,9 @@ The crime_index could be derived in a number of ways; however, for the purposes 
   ]
   ```
   ```
-  // Many to one relationship with housing_data  
+  // Neighborhood Info with many-to-one relationship with housing_data  
     
-  neighborhood_info = [               // Neighborhood information model
+  neighborhood_data = [               
     {'id' : sysAssigned,              
     ‘zipCode’: 'string',}             // pkID for linking with housing data
     'safetyIndex' : 'int',            // Utilized to rank locations 
