@@ -25,8 +25,8 @@
 
 **8 Jan**  
 
-- Completed framework (...as is - i.e. time to move on). Re-did on logo, built mini-logo, finished formatting landing page with skeleton framework and place holders and data-logic.  
-- In the 'main' area (UI)
+- Completed framework (...as is - i.e. time to move on). Re-did logo, built mini-logo, finished formatting landing page with skeleton framework and place holders and data-logic.  
+- In the 'main' area (UI) -> To do Items; UX logic ->
   - Put choices for searching (dropdowns)?
   - On load Display: 1) for anonymous user (alphetical list of housing), i.e. Default Result OR 2) if user log-ins; saved units (if any)
   - On search Display results; unit (from housing_data) and the associated neighborhoood info (from neighborhood_data)</center>
