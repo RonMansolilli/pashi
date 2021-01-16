@@ -62,6 +62,7 @@
 - Completed testing in database admin page and django object browser (via django). Objects can be saved, altered in both neighborhood & housing data tables. 
 - Further altered serializers and models to ensure easy future upgrades. 
 - Update documentation and notes.
+- Data integrity checks
 
 **17 Jan**
 
