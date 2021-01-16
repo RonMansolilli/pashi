@@ -9,6 +9,8 @@ Future Link:  https://mansolilli.com/pashi/
 
 ### Project Information
 
+*Safety OR Affordability shouldn't be a choice.*
+
 Obtaining affordable housing in the City of Portland (CoP) is challenging; finding affordable housing that is also safe and desirable is even more challenging especially for those in need.  This app is designed to allow users to view their options and make informed decisions based on a location factoring in its safety for themselves and/or families.
 
 ### Features
@@ -32,11 +34,11 @@ Obtaining affordable housing in the City of Portland (CoP) is challenging; findi
 ### Project Milestones
 
 
-  | Week 1                       | Week 2                        | Week 3                          | Week 4                        |
-  | -----------------------      | ----------------------------- | ------------------------------- | ----------------------------- |
-  | S1. ~~Admin Start/Finish~~   | ~~S2. (MVP) Framing Finish~~  | S3b. (MVP) Backend Finish       | S5. (MVP) UX Dev Start/Finish |
-  | S2. ~~Framing Start~~        | S3a. Prep Data Start/Finish   | S4. (MVP) Frontend Start/Finish | S6. Testing/Rollout           |
-  |                              | S3b. Backend Start            |                                 |                               |
+  | Week 1                       | Week 2                         | Week 3                          | Week 4                        |
+  | -----------------------      | -----------------------------  | ------------------------------- | ----------------------------- |
+  | S1. ~~Admin Start/Finish~~   | ~~S2. (MVP) Framing Finish~~   | ~~S3b. (MVP) Backend Finish~~   | S5. (MVP) UX Dev Start/Finish |
+  | S2. ~~Framing Start~~        | ~~S3a. Prep Data Start/Finish~~| S4. (MVP) Frontend Start/Finish | S6. Testing/Rollout           |
+  |                              | ~~S3b. Backend Start~~         |                                 |                               |
 
 ### Languages/Libraries/Frameworks
 
@@ -106,8 +108,8 @@ h. Code naming convention
   - [x] b. Pull zip code dataset based on Portland neighborhoods
   - [x] c. Pull 2020 crime dataset from CoP crime data site, evaluate and scrub
   - [x] d. Build working files for crime and housing data
-  - [ ] d1. Build new fields (required for functionality), populate via scripts, compute crime_index per zipcode
-  - [ ] d2. Finalize CSV for neighborhood_info, housing_info
+  - [x] d1. Build new fields (required for functionality), populate via scripts, compute crime_index per zipcode
+  - [x] d2. Finalize CSV for neighborhood_info, housing_info
   - ~~[ ] e. Build out crime_index as noted in methodology~~ (no longer required, changed to neighborhood_info)
 
   **Crime Data Methodology:**
@@ -137,9 +139,13 @@ The crime_index could be derived in a number of ways; however, for the purposes 
 ### S3b. Backend
 
   **Tasks:**
-  - [ ] a. Build out Models (see below)
-  - [ ] a. Build out API
-  - [ ] a. Test models
+  - [x] a. Build out Models (see below) (Note: added some functionality/expandibility - needs to be documented)
+  - [x] b. Build out API (via Django Rest Framework)
+  - [x] b. Populate Data
+        - Imported .csv into database as tables
+        - Manually moved data from table to table to populate the database
+  - [x] d. Test models
+        - Save, alter, etc.  
 
   **Models**
 
@@ -191,7 +197,7 @@ The crime_index could be derived in a number of ways; however, for the purposes 
     {'id' : sysAssigned,         // many-to-many relationship btw user_data and housing_data
     'user_data.id' : integer,
     'housing_data.id' : integer,
-    'userNotes' : 'string',       //User can take notes on the property
+    'userNotes' : 'string',       //User can take notes on the property (not implemented yet)
     }
   ]
   ```
