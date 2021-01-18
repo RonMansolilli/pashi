@@ -73,6 +73,7 @@
           data: {
               users: [],
               housing: [],
+              neighborhoods: [],
               csrf_token: "",
               postErrors: {}
           },
@@ -83,11 +84,23 @@
                       url: '/apis/v1/'
                   }).then(response => {
                       this.housing = response.data
+                      console.log(response.data)
+                  })
+              },
+              loadNeighborhood: function() {
+                  axios({
+                      method: 'get',
+                      url: '/apis/v1/neighborhood'
+                  }).then(response => {
+                      this.neighborhoods = response.data
+                      console.log(response.data)
                   })
               },
           },
           created: function() {
               this.loadHousing()
+              this.loadNeighborhood()
+
           },
           mounted: function() {
               this.csrf_token = document.querySelector('input[name="csrfmiddlewaretoken"]').value

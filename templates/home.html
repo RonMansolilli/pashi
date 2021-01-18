@@ -4,18 +4,36 @@
 
 {% block content %}
 
-<h3><center>Put choices for searching (dropdowns)?</center></h3>
-<hr>
 <div id="app">
-    <ul>
-        <h4><u>Housing</u></h4>
-        <div v-for="house in housing" :key="house.id">
-            - &ensp;<b>Name: [[ house.projectName ]] </b><br>
-            &nbsp;&nbsp;&ensp;Address: [[ house.address ]] <br>
-            &nbsp;&nbsp;&ensp;Crime Index: [[ house.crimeIndex ]]
 
-        </div>
-    </ul>
+    <h5><center>Search</center></h5>
+    <center>
+    <select name="selectUnit" id="selectUnit" v-model="selectUnit">
+        <option div v-for="house in housing" value="" selected> 
+            [[ house.projectName ]]
+        </option>
+    </select>
+
+    <select name="userSelection" id="userSelection" v-model="userSelection">
+        <option value="safetyIndex" selcted>Safety Index</option>
+        <option value="zip" selcted>Zip</option>
+    </select>
+    </center>
+
+    <hr>
+
+        <ul>
+            <h4><u>Housing</u></h4>
+            <div v-for="house in housing" :key="house.id">
+                - &ensp;<b>Name: [[ house.projectName ]] </b><br>
+                &nbsp;&nbsp;&ensp;Address: [[ house.address ]] <br>
+                &nbsp;&nbsp;&ensp;Zip Code: [[ house.zipCode ]]
+                <div v-for="hood in neighborhoods" v-if="hood.zipCode == house.zipCode">
+                    &nbsp;&nbsp;&ensp;Crime Index: [[ hood.crimeIndex ]]
+                    &nbsp;&nbsp;&ensp;Safety Rank: [[ hood.safetyRank ]]                   
+                </div>
+            </div>
+        </ul>
 </div>
 <hr>
 <h3><center>UI Development</center></h3>

@@ -2,7 +2,31 @@ from rest_framework import serializers
 from housing_app import models
 
 
+class NeighborhoodSerializer(serializers.ModelSerializer):
+    class Meta:
+        fields = (
+            # 'id',
+            'zipCode',
+            'crimeIndex',
+            'crimeCount',
+            'crimeRatio',
+            'safetyRank'
+            # 'neighborhood',
+            # 'quadrant'
+            # 'avgRent',
+            # 'rentLow',
+            # 'rentHigh',
+            # 'walkIndex',
+            # 'violenceIndex',
+            # 'crimeTime',
+            # 'avgHomeValue',
+        )
+        model = models.neighborhood_data
+
 class HousingSerializer(serializers.ModelSerializer):
+    # info = NeighborhoodSerializer(many=True, read_only=True)
+    # crimeIndex1 = serializers.RelatedField(source='crimeIndex', read_only=True)
+
     class Meta:
         fields = (
             'id',
@@ -27,24 +51,3 @@ class HousingSerializer(serializers.ModelSerializer):
             # 'photo',
         )
         model = models.housing_data
-
-class NeighborhoodSerializer(serializers.ModelSerializer):
-    class Meta:
-        fields = (
-            'id',
-            'zipCode',
-            'crimeIndex',
-            'crimeCount',
-            'crimeRatio',
-            # 'neighborhood',
-            # 'quadrant'
-            # 'avgRent',
-            # 'rentLow',
-            # 'rentHigh',
-            # 'walkIndex',
-            # 'violenceIndex',
-            # 'crimeTime',
-            # 'avgHomeValue',
-        )
-        model = models.neighborhood_data
-

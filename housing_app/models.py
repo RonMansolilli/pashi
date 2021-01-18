@@ -30,6 +30,7 @@ class housing_data(models.Model): # should I put in blank=True, null=True
 
 class neighborhood_data(models.Model):
     zipCode = models.CharField(max_length=5, primary_key=True)
+    safetyRank = models.IntegerField(blank=True, null=True)
     crimeIndex = models.FloatField()
     crimeCount = models.FloatField()
     crimeRatio = models.FloatField()
