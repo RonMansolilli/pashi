@@ -66,7 +66,15 @@
 
 **17 Jan**
 
-- xxxxxx
+- Connected backend to UI - displaying housing data all housing data.  Configured API urls, serializers, models, and views.  Serious issues trying to make many-to-one relationship appear in single object (instance).   
+
+**18 Jan**
+
+- Worked around issue - made seperate axios call for neighborhood data and successfully displayed to UI.  Added safetyRank to neighborhood_data model/table.  Built out dropdown boxes to allow users to search for specific unit, zip code, or safety rank.  
+
+**19 Jan**
+
+- xxxxxxx
 
 
 
