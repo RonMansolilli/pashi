@@ -37,9 +37,17 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'users_app',      # User functionality
-    'housing_app', # Housing data functionality
+    'rest_framework',   # Django Rest Framework
+    'apis',             # API stuff
+    'users_app',        # User info/configs
+    'housing_app',      # Housing data/info
 ]
+
+REST_FRAMEWORK = {      # Django Rest Framework
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.AllowAny',
+    ]
+}
 
 AUTH_USER_MODEL = 'users_app.CustomUser' # new
 

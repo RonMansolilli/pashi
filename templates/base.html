@@ -18,9 +18,9 @@
       <div class="row">
         <div class="ten columns" style="margin-top: 1%">
           <div style="border: none; text-align: center;">
-            <img src="/media/images/pashi_logo1.jpg" alt="pashi_logo" style="object-fit: fill; width: 100%">
+            <img src="/media/images/pashi_logo1.jpg" alt="pashi1_logo" style="object-fit: fill; width: 100%">
             <br>
-            <i>"Giving those in need an ability to find, not only affordable, but SAFE housing in the City of Portland."</i>
+            <i>"Safety OR Affordability shouldn't be a choice.</i>
           </div>
         </div>
         <div class="two columns" style="margin-top: 1%; ">
@@ -42,7 +42,8 @@
       <!-- Begin html/django code  ------------------------------------>
       <div class="row">
         <div class="twelve columns" style="margin-top: 1%">
-    
+          {% csrf_token %}
+
           <main>
             {% block content %}
             {% endblock %}
@@ -54,14 +55,46 @@
 
       <!-- Footer --------------------------------------------------------->
       <div class="row">
-        <div class="ten columns" ><center><i>BIG Footer</i></center></div>
-        <div class="two columns" ><center><i>small Footer</i></center></div>
+        <div class="ten columns" ><center>Check us out on:<br><i><a href="/" target="_blank">Facebook|Instagram|Twitter<br>Contact Us</a></i></center></div>
+        <div class="two columns" ><center><i><a href="/" target="_blank">About<br>FAQ<br>Resources</a></i></center></div>
         {% comment %} <div class="four columns" style="margin-top: 1%"><center>empty</center></div> {% endcomment %}
       </div>
     </div>
 
-    <!-- JS files --------------------------------------------------------->
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-  </body>
-</html>
+  <!-- JS files --------------------------------------------------------->
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+  <!-- Vue script ----------------------------------------------------->
+    <script>
+      let app = new Vue({
+          el: '#app',
+          delimiters: ['[[', ']]'],
+          data: {
+              users: [],
+              housing: [],
+              csrf_token: "",
+              postErrors: {}
+          },
+          methods: {
+              loadHousing: function() {
+                  axios({
+                      method: 'get',
+                      url: '/apis/v1/'
+                  }).then(response => {
+                      this.housing = response.data
+                  })
+              },
+          },
+          created: function() {
+              this.loadHousing()
+          },
+          mounted: function() {
+              this.csrf_token = document.querySelector('input[name="csrfmiddlewaretoken"]').value
+          }
+      });
+    </script>
+
+    <!-- Closing tags -->
+    </body>
+  </html> 
