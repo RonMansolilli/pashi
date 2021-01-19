@@ -257,14 +257,16 @@ The crime_index could be derived in a number of ways; however, for the purposes 
   - Utilize additional model fields to provide more useful UX (see Section 3b for fields)
   - Add a violenceIndex and propertyIndex to gain a better picture of the type of crime occuring in zip
   - Add images of housing units
+  - Add color coding to quickly indicate level of crime severity
   
   
 ### Addendum: Challenges
 
   - Ensuring data integrity
-  - Documenting data structures 
+  - Documenting/modeling the data structures 
   - Creating ethical data methodologies 
   - Project creep
+  - Poplulating database
 
   
   
