@@ -1,5 +1,5 @@
 ## PASHI Documentation ##
-*Last updated:  14 Jan 2020*
+*Last updated:  19 Jan 2021*
 
 Future Link:  https://mansolilli.com/pashi/  
 
@@ -12,6 +12,8 @@ Future Link:  https://mansolilli.com/pashi/
 *Safety OR Affordability shouldn't be a choice.*
 
 Obtaining affordable housing in the City of Portland (CoP) is challenging; finding affordable housing that is also safe and desirable is even more challenging especially for those in need.  This app is designed to allow users to view their options and make informed decisions based on a location factoring in its safety for themselves and/or families.
+
+PASHI is a simple, easily accessible, mobile friendly web-app.  It takes the City of Portland's most recent crime data (2020), interpolates the data into a crime index, and then combines that with the most recent State of Oregon registered affordable housing list.  The outcome; a fully indexed list of affordable housing that users can search to assess the safety of a development and balance with their needs.  
 
 ### Features
 
@@ -34,11 +36,11 @@ Obtaining affordable housing in the City of Portland (CoP) is challenging; findi
 ### Project Milestones
 
 
-  | Week 1                       | Week 2                         | Week 3                          | Week 4                        |
-  | -----------------------      | -----------------------------  | ------------------------------- | ----------------------------- |
-  | S1. ~~Admin Start/Finish~~   | ~~S2. (MVP) Framing Finish~~   | ~~S3b. (MVP) Backend Finish~~   | S5. (MVP) UX Dev Start/Finish |
-  | S2. ~~Framing Start~~        | ~~S3a. Prep Data Start/Finish~~| S4. (MVP) Frontend Start/Finish | S6. Testing/Rollout           |
-  |                              | ~~S3b. Backend Start~~         |                                 |                               |
+  | Week 1                       | Week 2                         | Week 3                             | Week 4                          |
+  | -----------------------      | -----------------------------  | -------------------------------    | -----------------------------   |
+  | S1. ~~Admin Start/Finish~~   | ~~S2. (MVP) Framing Finish~~   | ~~S3b. (MVP) Backend Finish~~      | S5. (MVP) UI/UX Dev Start/Finish|
+  | S2. ~~Framing Start~~        | ~~S3a. Prep Data Start/Finish~~| ~~S4. (MVP) Frontend Start/Finish~~| S6. Testing/Rollout             |
+  |                              | ~~S3b. Backend Start~~         |                                    |                                 |
 
 ### Languages/Libraries/Frameworks
 
@@ -46,6 +48,7 @@ Obtaining affordable housing in the City of Portland (CoP) is challenging; findi
 - CSS / HTML
 - Javascript
 - Python
+- SQL
 
 ### S1. Administration
 
@@ -62,7 +65,7 @@ Obtaining affordable housing in the City of Portland (CoP) is challenging; findi
 
 **Notes on tasks:**
 
-a. Utilizing modified Agile Framework with MVP milestones at set stages.  
+a. Project management: utilized modified Agile Framework with MVP milestones at set stages.  
 
 f. Datasets
    - Primary:  
@@ -220,18 +223,18 @@ The crime_index could be derived in a number of ways; however, for the purposes 
   -
 
   **Tasks:**
-  - [ ] a. Populate drop down search box (unit_search) with unit names and a 'show all option'
-  - [ ] b. Populate drop down search box (location_search) with unit locations (by zip or area?)
-  - [ ] c. Build on_selection function to return/output single unit or multiple units based on unit_search
+  - [x] a. Populate drop down search box (unit_search) with unit names and a 'show all option'
+  - [x] b. Populate drop down search box (location_search) with unit locations (by zip or area?)
+  - [x] c. Build on_selection function to return/output single unit or multiple units based on unit_search
   - [ ] d. Build on_selection function to return/output all units when location_search called ()
-  - [ ] e. Format output from both unit_search and location_search to include crime_index (safety_rank?)
+  - [x] e. Format output from both unit_search and location_search to include crime_index (safety_rank?)
   - [ ] f. Ensure all output is returned based on crime_index in descending order.  
   - [ ] g. Format output to include a Save option_box
   - [ ] h. Dynamically provide user_notes text box on selection
   - [ ] i. Add dynamic content to display the who, why, how, resources documentation
   - [ ] j. <blank placeholder for more tasks>
 
-### S5. Formatting Display (UI)
+### S5. Formatting Display (UI/UX)
 
   **Tasks:**
   - [ ] a. Polish display for professional appearance
