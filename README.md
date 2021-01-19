@@ -13,7 +13,7 @@ Future Link:  https://mansolilli.com/pashi/
 
 Obtaining affordable housing in the City of Portland (CoP) is challenging; finding affordable housing that is also safe and desirable is even more challenging especially for those in need.  This app is designed to allow users to view their options and make informed decisions based on a location factoring in its safety for themselves and/or families.
 
-PASHI is a simple, easily accessible, mobile friendly web-app.  It takes the City of Portland's most recent crime data (2020), interpolates the data into a crime index, and then combines that with the most recent State of Oregon registered affordable housing list.  The outcome; a fully indexed list of affordable housing that users can search to assess the safety of a development and balance with their needs.  
+PASHI is a simple, easily accessible, mobile friendly web-app.  It takes the City of Portland's most recent crime data (2020), interpolates the data into a crime index, and then combines that with the most recent State of Oregon registered affordable housing list.  The outcome; a fully indexed list of affordable housing that users can search to assess the safety of a development and it's location.  
 
 ### Features
 
