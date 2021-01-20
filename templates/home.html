@@ -6,39 +6,72 @@
 
 <div id="app">
 
-    <h5><center>Search</center></h5>
+    <h5><center><u>Search</u></center></h5>
     <center>
-    <select name="selectUnit" id="selectUnit" v-model="selectUnit">
-        <option div v-for="house in housing" value="" selected> 
-            [[ house.projectName ]]
-        </option>
+    By Housing Development:
+    <select name="selectUnit" id="selectUnit" v-model="house_selected">
+        {% comment %} <option value="none" selected disabled hidden>Select an Option</option>  {% endcomment %}
+        <option div v-for="house in housing">[[ house.projectName ]]</option>
     </select>
-
-    <select name="userSelection" id="userSelection" v-model="userSelection">
-        <option value="safetyIndex" selcted>Safety Index</option>
-        <option value="zip" selcted>Zip</option>
+    <br>
+    By All, Zip Code or Safety Index:
+    <select name="multi_selected" id="multi_selected" v-model="multi_selected">
+        {% comment %} <option value="none" selected disabled hidden>Select an Option</option>  {% endcomment %}
+        <option value="all_selected">Alphabetical</option>
+        <option value="safetyIndex">Safety Index</option>
+        <option value="zip">Zip</option>
     </select>
     </center>
-
     <hr>
-
+    <div class="row">
+    {% csrf_token %}
+        <div class="three columns" style="margin-top: 1%;"></div>
+        <div class="six columns" style="margin-top: 1%;" >
         <ul>
-            <h4><u>Housing</u></h4>
-            <div v-for="house in housing" :key="house.id">
-                - &ensp;<b>Name: [[ house.projectName ]] </b><br>
-                &nbsp;&nbsp;&ensp;Address: [[ house.address ]] <br>
-                &nbsp;&nbsp;&ensp;Zip Code: [[ house.zipCode ]]
-                <div v-for="hood in neighborhoods" v-if="hood.zipCode == house.zipCode">
-                    &nbsp;&nbsp;&ensp;Crime Index: [[ hood.crimeIndex ]]
-                    &nbsp;&nbsp;&ensp;Safety Rank: [[ hood.safetyRank ]]                   
+            <h6><u>Search results:</u></h6>
+            <div v-if="house_selected">
+                <div v-for="house in housing">
+                    <div v-if="house_selected == house.projectName">
+                        - &ensp;<b>Name: [[ house.projectName ]] </b><br>
+                        &nbsp;&nbsp;&ensp;Address: [[ house.address ]] <br>
+                        &nbsp;&nbsp;&ensp;Zip Code: [[ house.zipCode ]]
+                        <div v-for="hood in neighborhoods">
+                            <div v-if="hood.zipCode === house.zipCode">
+                                &nbsp;&nbsp;&ensp;Crime Index: [[ hood.crimeIndex ]]
+                                &nbsp;&nbsp;&ensp;Safety Rank: [[ hood.safetyRank ]]  
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div v-else-if="multi_selected">
+                <div v-for="house in housing" :key="house.id">
+                    - &ensp;<b>Name: [[ house.projectName ]] </b><br>
+                    &nbsp;&nbsp;&ensp;Address: [[ house.address ]] <br>
+                    &nbsp;&nbsp;&ensp;Zip Code: [[ house.zipCode ]]
+                    <div v-for="hood in neighborhoods">
+                        <div v-if="hood.zipCode === house.zipCode">
+                            &nbsp;&nbsp;&ensp;Crime Index: [[ hood.crimeIndex ]]
+                            &nbsp;&nbsp;&ensp;Safety Rank: [[ hood.safetyRank ]]    
+                        </div>               
+                    </div>
                 </div>
             </div>
         </ul>
+    </div>
+    <div class="two columns" style="margin-top: 1%;"></div>
 </div>
 <hr>
-<h3><center>UI Development</center></h3>
-<h6><center>On load Display: 1) for anonymous user (alphetical list of housing) - i.e. Default Result OR 2) if user log-ins; saved units (if any)</center></h3>
-<h6><center>On search Display results; unit (from housing_data) and the associated neighborhoood info (from neighborhood_data)</center></h3>
-<h6><center>If user is logged in, results should also include ability for user to save and take notes. </center></h3>
+<h5><center><u>The W's</u></h5>
+<h6><center><b>How:</b>  Utilize the search boxes above to search for housing. <br>
+<b>Why:</b>  Finding affordable housing is already difficult; PASHI makes it easier. <br>
+<b>What:</b>  PASHI takes Portland crime data and combines it with the affordable housing list. <br>
+<b>Who:</b>  For anyone who wants to make an informed decision when looking for affordable housing. <br><br>
+More housing info: <i><a href="/" target="_blank">Resources</i></a> <br>
+More about PASHI: <i><a href="/" target="_blank">About</i></a> 
 
+
+</h6></center>
 {% endblock %}
+
+

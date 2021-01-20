@@ -1,0 +1,20 @@
+
+{% extends 'home.html' %}
+{% block title %}Display{% endblock %}
+
+{% block housing_display %}
+
+        <ul>
+            <h4><u>Housing</u></h4>
+            <div v-for="house in housing" :key="house.id">
+                - &ensp;<b>Name: [[ house.projectName ]] </b><br>
+                &nbsp;&nbsp;&ensp;Address: [[ house.address ]] <br>
+                &nbsp;&nbsp;&ensp;Zip Code: [[ house.zipCode ]]
+                <div v-for="hood in neighborhoods" v-if="hood.zipCode == house.zipCode">
+                    &nbsp;&nbsp;&ensp;Crime Index: [[ hood.crimeIndex ]]
+                    &nbsp;&nbsp;&ensp;Safety Rank: [[ hood.safetyRank ]]                   
+                </div>
+            </div>
+        </ul>
+
+{% endblock %}

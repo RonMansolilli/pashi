@@ -20,7 +20,7 @@
           <div style="border: none; text-align: center;">
             <img src="/media/images/pashi_logo1.jpg" alt="pashi1_logo" style="object-fit: fill; width: 100%">
             <br>
-            <i>"Safety OR Affordability shouldn't be a choice.</i>
+            <i>"Choosing 'Safety OR Affordability' shouldn't be a choice.</i>
           </div>
         </div>
         <div class="two columns" style="margin-top: 1%; ">
@@ -41,22 +41,21 @@
 
       <!-- Begin html/django code  ------------------------------------>
       <div class="row">
-        <div class="twelve columns" style="margin-top: 1%">
           {% csrf_token %}
-
+        <div class="twelve columns" style="margin-top: 1%">
           <main>
             {% block content %}
             {% endblock %}
           </main>
           <hr>
-
         </div>
       </div>
 
       <!-- Footer --------------------------------------------------------->
       <div class="row">
-        <div class="ten columns" ><center>Check us out on:<br><i><a href="/" target="_blank">Facebook|Instagram|Twitter<br>Contact Us</a></i></center></div>
-        <div class="two columns" ><center><i><a href="/" target="_blank">About<br>FAQ<br>Resources</a></i></center></div>
+        <div class="twelve columns" ><center>Check us out on:<br><i><a href="/" target="_blank">Facebook|Instagram|Twitter<br>Contact Us</a></i></center></div><br>
+        <div><center><i><a href="/" target="_blank">FAQ</a></i></center></div>
+        {% comment %} <div class="two columns" ><center><i><a href="/" target="_blank">About<br>FAQ<br>Resources</a></i></center></div> {% endcomment %}
         {% comment %} <div class="four columns" style="margin-top: 1%"><center>empty</center></div> {% endcomment %}
       </div>
     </div>
@@ -73,9 +72,12 @@
           data: {
               users: [],
               housing: [],
+              housingRank: [],
               neighborhoods: [],
               csrf_token: "",
-              postErrors: {}
+              postErrors: {},
+              house_selected: "",
+              multi_selected: "",
           },
           methods: {
               loadHousing: function() {
@@ -84,7 +86,7 @@
                       url: '/apis/v1/'
                   }).then(response => {
                       this.housing = response.data
-                      console.log(response.data)
+                      {% comment %} console.log(response.data) {% endcomment %}
                   })
               },
               loadNeighborhood: function() {
@@ -93,7 +95,7 @@
                       url: '/apis/v1/neighborhood'
                   }).then(response => {
                       this.neighborhoods = response.data
-                      console.log(response.data)
+                      {% comment %} console.log(response.data) {% endcomment %}
                   })
               },
           },
