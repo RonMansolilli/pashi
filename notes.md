@@ -1,6 +1,6 @@
 
 
-## PASHI Log/Notes ##
+## PASHI Developer Log/Notes ##
 
 **30 Dec**
 - Discussion with Austen on expanding framework documentation, utilizing Panda's to manipulate datasets, utilizing django filter backend module, drop_all null, and merge.  Also discussion on utilizing extended user-model, many-to-many models, etc.
@@ -66,7 +66,7 @@
 
 **17 Jan**
 
-- Connected backend to UI - displaying housing data all housing data.  Configured API urls, serializers, models, and views.  Serious issues trying to make many-to-one relationship appear in single object (instance).   
+- Connected backend to UI - displaying all housing data.  Configured API urls, serializers, models, and views.  Serious issues trying to make many-to-one relationship appear in single object (instance).   
 
 **18 Jan**
 
@@ -74,7 +74,19 @@
 
 **19 Jan**
 
-- xxxxxxx
+- Built out UX logic to display data
+- Added functionality to the specific unit dropdown box to display single unit.
+- Added functionality to the multi_select dropdown box (only able to display unordered on select).  Causes error with single select dropdown box.  
+
+**20 Jan** 
+
+- Refined code.  Finished building masterHousing list which combines housing and neighborhood data (for easy sorting and display).
+- Solved issues with dropdown boxes not updating dynamically.
+- Built 3 queries (utilizing sort) and attached dropdown boxes to dynmaically update main display.  
+
+**21 Jan**
+
+- Added user-functionality (save, display functions)
 
 
 
