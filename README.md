@@ -205,15 +205,7 @@ The crime_index could be derived in a number of ways; however, for the purposes 
     }
   ]
   ```
-  **Update 1/6 - Utilized custom user data model**  
-  ~~user_data = [                  // Standard user data  
-    {'id' : sysAssigned,         
-    'userName : 'string',  
-    'userPwd : sysAssigned,  
-    'firstName' : 'string',  
-    'lastName' : 'string',  
-    }  
-  ]~~ 
+  **Update 1/6 - Utilized custom user data model in lieu of building a user model**  
 
 ### S4. Frontend (UX)
 
