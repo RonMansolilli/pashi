@@ -1,5 +1,5 @@
 ## PASHI Documentation ##
-*Last updated:  19 Jan 2021*
+*Last updated:  21 Jan 2021*
 
 Future Link:  https://mansolilli.com/pashi/  
 
@@ -38,9 +38,9 @@ PASHI is a simple, easily accessible, mobile friendly web-app.  It takes the Cit
 
   | Week 1                       | Week 2                         | Week 3                             | Week 4                          |
   | -----------------------      | -----------------------------  | -------------------------------    | -----------------------------   |
-  | S1. ~~Admin Start/Finish~~   | ~~S2. (MVP) Framing Finish~~   | ~~S3b. (MVP) Backend Finish~~      | S5. (MVP) UI/UX Dev Start/Finish|
-  | S2. ~~Framing Start~~        | ~~S3a. Prep Data Start/Finish~~| ~~S4. (MVP) Frontend Start/Finish~~| S6. Testing/Rollout             |
-  |                              | ~~S3b. Backend Start~~         |                                    |                                 |
+  | S1. Admin Start/Finish       | S2. (MVP) Framing Finish       | S3b. (MVP) Backend Finish          | S5. (MVP) UI/UX Dev Start/Finish|
+  | S2. Framing Start            | S3a. Prep Data Start/Finish    | S4. (MVP) Frontend Start/Finish    | S6. Testing/Rollout             |
+  |                              | S3b. Backend Start             |                                    |                                 |
 
 ### Languages/Libraries/Frameworks
 
@@ -69,15 +69,17 @@ a. Project management: utilized modified Agile Framework with MVP milestones at 
 
 f. Datasets
    - Primary:  
-     - Crime_Data *Obtained from CoP Crime Datasets  
-     - Housing_Data *Obtain from CoP or Oregon State data website (API)  
+     - Crime_Data *Obtained from CoP Crime Datasets 
+       - https://www.portlandoregon.gov/police/71978
+     - Housing_Data *Obtain from CoP or Oregon State data website (API)
+       - https://data.oregon.gov/Health-Human-Services/Affordable-Housing-Inventory/bq26-qyg4
    - Secondary:    
      - Zip-code info associated with unique Portland Areas  
      - Zip-code info associated with housing data addresses  
 
 h. Code naming convention  
-   - Variables (single value):  camelCase  
-   - Lists/Arrays:  name_name  
+   - Variables (single value): camelCase  
+   - Lists/Arrays: name_name  
 
 ### S2. App Framework
 
@@ -86,7 +88,7 @@ h. Code naming convention
          - Start Django project documentation  
          - Create app
          - Configure settings, admin, urls
-   - [ ] b. Build out first model  
+   - [x] b. Build out first model  
          - See section S3b  
          - Activate Models  
          - Testing  
@@ -107,7 +109,7 @@ h. Code naming convention
 ### S3a. Dataset Prep
 
   **Tasks:**
-  - [x] a. Pull datasets from CoP or figure out if an API call would work
+  - [x] a. Pull datasets from State of Oregon or figure out if an API call would work
   - [x] b. Pull zip code dataset based on Portland neighborhoods
   - [x] c. Pull 2020 crime dataset from CoP crime data site, evaluate and scrub
   - [x] d. Build working files for crime and housing data
@@ -169,7 +171,6 @@ The crime_index could be derived in a number of ways; however, for the purposes 
     '2_bedroom' : 'int',
     '3_bedroom' : 'int',
     '4_bedroom' : 'int',
-    '
     }
   ]
   ```
@@ -204,15 +205,7 @@ The crime_index could be derived in a number of ways; however, for the purposes 
     }
   ]
   ```
-  **Update 1/6 - Utilized custom user data model**  
-  ~~user_data = [                  // Standard user data  
-    {'id' : sysAssigned,         
-    'userName : 'string',  
-    'userPwd : sysAssigned,  
-    'firstName' : 'string',  
-    'lastName' : 'string',  
-    }  
-  ]~~ 
+  **Update 1/6 - Utilized custom user data model in lieu of building a user model**  
 
 ### S4. Frontend (UX)
 
@@ -220,36 +213,35 @@ The crime_index could be derived in a number of ways; however, for the purposes 
   - Should allow anonymous users access to search functionality (but no saving/notes)
   - Registered users (when logging in) will auto-populate saved unit_search (or null if none)
   - Reg users will also have access to notes (under each unit)
-  -
-
+  
   **Tasks:**
   - [x] a. Populate drop down search box (unit_search) with unit names and a 'show all option'
   - [x] b. Populate drop down search box (location_search) with unit locations (by zip or area?)
   - [x] c. Build on_selection function to return/output single unit or multiple units based on unit_search
-  - [ ] d. Build on_selection function to return/output all units when location_search called ()
+  - [x] d. Build on_selection function to return/output all units when location_search called ()
   - [x] e. Format output from both unit_search and location_search to include crime_index (safety_rank?)
-  - [ ] f. Ensure all output is returned based on crime_index in descending order.  
-  - [ ] g. Format output to include a Save option_box
-  - [ ] h. Dynamically provide user_notes text box on selection
+  - [x] f. Ensure all output is returned based on crime_index in ascending order.  
+  - [x] g. Format output to include a Save option_box
+  - [x] h. Dynamically provide user_notes text box on selection
   - [ ] i. Add dynamic content to display the who, why, how, resources documentation
-  - [ ] j. <blank placeholder for more tasks>
 
 ### S5. Formatting Display (UI/UX)
 
   **Tasks:**
-  - [ ] a. Polish display for professional appearance
-  - [ ] b. Ensure compatibility with mobile devices (**PRIORITY**)
+  - [x] a. Polish display for professional appearance
+  - [x] b. Ensure compatibility with mobile devices (**PRIORITY**)
 
 ### S6. Testing/Rollout
 
   **Tasks:**
-  - [ ] a. Test on multiple individuals and multiple platforms
-  - [ ] b. Debug and polish
-  - [ ] c. Finish documentation
+  - [x] a. Test on multiple individuals and multiple platforms
+  - [x] b. Debug and polish
+  - [x] c. Finish documentation
 
 ### S7. Future
 
 **Future Development:**
+  - Pop ups to explain data (e.g. Safety Rank, Crime Count, etc.)
   - Build project to utilize ARCgis to display maps and locations visually.  
   - Add Walkability index as a search parameter
   - Add user -> public comments or a rating system for each property
@@ -262,7 +254,6 @@ The crime_index could be derived in a number of ways; however, for the purposes 
   - Add images of housing units
   - Add color coding to quickly indicate level of crime severity
   
-  
 ### Addendum: Challenges
 
   - Ensuring data integrity
@@ -270,6 +261,7 @@ The crime_index could be derived in a number of ways; however, for the purposes 
   - Creating ethical data methodologies 
   - Project creep
   - Poplulating database
+  - Devloping UX logic
 
   
   
