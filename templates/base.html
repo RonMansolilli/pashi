@@ -113,7 +113,11 @@
                   for (x1 = 0; x1 < this.neighborhoods.length; x1++) {
                     if (tempHousing[x].zipCode === this.neighborhoods[x1].zipCode) {
                       let safetyRank = this.neighborhoods[x1].safetyRank
+                      let crimeCount = this.neighborhoods[x1].crimeCount
+                      let crimeIndex = this.neighborhoods[x1].crimeIndex
                       tempHousing[x] = Object.assign(this.housing[x], {safetyRank})
+                      tempHousing[x] = Object.assign(this.housing[x], {crimeIndex})
+                      tempHousing[x] = Object.assign(this.housing[x], {crimeCount})
                     }
                   }
                 }
