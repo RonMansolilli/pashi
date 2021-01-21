@@ -9,16 +9,16 @@
     <h5><center><u>Search</u></center></h5>
     <center>
     By Housing Development:
-    <select name="selectUnit" id="selectUnit" @change="masterHousing" v-model="house_selected">
+    <select name="selectUnit" id="selectUnit" v-model="house_selected">
         {% comment %} <option value="none" selected disabled hidden>Select an Option</option>  {% endcomment %}
         <option div v-for="house in housing">[[ house.projectName ]]</option>
     </select>
     <br>
     By All, Zip Code or Safety Index:
-    <select name="multi_select" id="multi_select" @change="sortBy" v-model="multi_select">
+    <select name="multi_select" id="multi_select" @change="sortBySafetyRank" v-model="multi_select">
         {% comment %} <option value="none" selected disabled hidden>Select an Option</option>  {% endcomment %}
-        <option value="name">Alphabetical</option>
-        <option value="safety">Safety Index</option>
+        <option value="all_selected">Alphabetical</option>
+        <option value="sortBySafetyRank">Safety Index</option>
         <option value="zip">Zip</option>
     </select>
     </center>
@@ -40,6 +40,34 @@
                     </div>
                 </div>
             </div>
+                {% comment %} <div v-if="house_selected">
+                    <div v-for="house in housing">
+                        <div v-if="house_selected == house.projectName">
+                            - &ensp;<b>Name: [[ house.projectName ]]</b> (Units Avail: [[ house.totalUnits ]])</b><br>
+                            <div v-for="hood in neighborhoods">
+                                <div v-if="hood.zipCode === house.zipCode">
+                                    &nbsp;&nbsp;&ensp;<b>Safety Rank: [[ hood.safetyRank ]]</b>
+                                    &nbsp;&nbsp;&ensp;Crime Index: [[ hood.crimeIndex ]]
+                                </div>
+                            </div>
+                            &nbsp;&nbsp;&ensp;Address: [[ house.address ]], [[ house.zipCode ]]<br>
+                            &nbsp;&nbsp;&ensp;Phone: [[ house.contactPhone ]]
+                        </div>
+                    </div>
+                </div> {% endcomment %}
+                {% comment %} <div v-else-if="multi_select">
+                    <div v-for="house in housing" :key="house.id">
+                        - &ensp;<b>Name: [[ house.projectName ]]</b> (Units Avail: [[ house.totalUnits ]])</b><br>
+                        <div v-for="hood in neighborhoods">
+                            <div v-if="hood.zipCode === house.zipCode">
+                                &nbsp;&nbsp;&ensp;<b>Safety Rank: [[ hood.safetyRank ]]</b>
+                                &nbsp;&nbsp;&ensp;Crime Index: [[ hood.crimeIndex ]]
+                            </div>
+                        </div>
+                        &nbsp;&nbsp;&ensp;Address: [[ house.address ]], [[ house.zipCode ]]<br>
+                        &nbsp;&nbsp;&ensp;Phone: [[ house.contactPhone ]]
+                    </div>
+                </div> {% endcomment %}
             <div v-else-if="multi_select">
                 <div v-for="house in tempHousing" :key="house.id">
                     - &ensp;<b>Name: [[ house.projectName ]]</b> (Units Avail: [[ house.totalUnits ]])</b><br>

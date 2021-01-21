@@ -53,10 +53,9 @@
 
       <!-- Footer --------------------------------------------------------->
       <div class="row">
-        <div class="twelve columns" ><center>Check us out on:<br><i><a href="/" target="_blank">Facebook|Instagram|Twitter<br>Contact Us</a></i></center></div><br>
+        <div class="twelve columns" ><center>Check us out on:<br><i><a href="/" target="_blank">Facebook | Instagram | Twitter<br>Contact Us</a></i></center></div><br>
         <div><center><i><a href="/" target="_blank">FAQ</a></i></center></div>
-        {% comment %} <div class="two columns" ><center><i><a href="/" target="_blank">About<br>FAQ<br>Resources</a></i></center></div> {% endcomment %}
-        {% comment %} <div class="four columns" style="margin-top: 1%"><center>empty</center></div> {% endcomment %}
+        <div><center>&copy Copyright 2021</center></div>
       </div>
     </div>
 
@@ -77,8 +76,11 @@
               csrf_token: "",
               postErrors: {},
               house_selected: "",
-              multi_selected: "",
+              multi_select: "",
+              tempHousing: [],
+              safetyRankArray: [],
           },
+
           methods: {
               loadHousing: function() {
                   axios({
@@ -98,11 +100,61 @@
                       {% comment %} console.log(response.data) {% endcomment %}
                   })
               },
+              resetDropdown() {
+                 var dropDown = document.getElementById("selectUnit");
+                  console.log(dropDown.value,dropDown.selectedIndex)
+                  dropDown.selectedIndex = "-1"
+                  console.log(dropDown.value,dropDown.selectedIndex)
+              },
+              masterHousing() {
+                tempHousing = this.housing
+
+                for (x = 0; x < tempHousing.length; x++) {
+                  for (x1 = 0; x1 < this.neighborhoods.length; x1++) {
+                    if (tempHousing[x].zipCode === this.neighborhoods[x1].zipCode) {
+                      let safetyRank = this.neighborhoods[x1].safetyRank
+                      tempHousing[x] = Object.assign(this.housing[x], {safetyRank})
+                    }
+                  }
+                }
+                {% comment %} console.log(tempHousing) {% endcomment %}
+                this.tempHousing = tempHousing
+              },
+              sortBySafetyRank () {
+                this.masterHousing()
+                this.safetyRankArray = this.tempHousing.sort(function (a, b) {
+                  return a.safetyRank - b.safetyRank
+                  })
+              },
+              sortByName () {
+                this.masterHousing()
+                this.safetyRankArray = this.tempHousing.sort(function (a, b) {
+                  return a.projectName - b.projectName
+                  })
+              },
+              sortByZip () {
+                this.masterHousing()
+                this.safetyRankArray = this.tempHousing.sort(function (a, b) {
+                  return a.zipCode - b.zipCode
+                  })
+              },
+              sortBy (event) {
+                this.house_selected = ''
+                if (event.target.value === 'zip') {
+                  this.sortByZip()
+                  }
+                else if (event.target.value === 'name') {
+                  this.masterHousing()
+                  }
+                else if (event.target.value === 'safety') {
+                  this.sortBySafetyRank()
+                  }
+                {% comment %} console.log(event.target.value)   {% endcomment %}
+              },
           },
           created: function() {
               this.loadHousing()
               this.loadNeighborhood()
-
           },
           mounted: function() {
               this.csrf_token = document.querySelector('input[name="csrfmiddlewaretoken"]').value
@@ -113,3 +165,4 @@
     <!-- Closing tags -->
     </body>
   </html> 
+
