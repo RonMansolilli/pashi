@@ -109,7 +109,7 @@ h. Code naming convention
 ### S3a. Dataset Prep
 
   **Tasks:**
-  - [x] a. Pull datasets from CoP or figure out if an API call would work
+  - [x] a. Pull datasets from State of Oregon or figure out if an API call would work
   - [x] b. Pull zip code dataset based on Portland neighborhoods
   - [x] c. Pull 2020 crime dataset from CoP crime data site, evaluate and scrub
   - [x] d. Build working files for crime and housing data
@@ -221,7 +221,7 @@ The crime_index could be derived in a number of ways; however, for the purposes 
   - [x] d. Build on_selection function to return/output all units when location_search called ()
   - [x] e. Format output from both unit_search and location_search to include crime_index (safety_rank?)
   - [x] f. Ensure all output is returned based on crime_index in ascending order.  
-  - [ ] g. Format output to include a Save option_box
+  - [x] g. Format output to include a Save option_box
   - [x] h. Dynamically provide user_notes text box on selection
   - [ ] i. Add dynamic content to display the who, why, how, resources documentation
 
@@ -241,6 +241,7 @@ The crime_index could be derived in a number of ways; however, for the purposes 
 ### S7. Future
 
 **Future Development:**
+  - Pop ups to explain data (e.g. Safety Rank, Crime Count, etc.)
   - Build project to utilize ARCgis to display maps and locations visually.  
   - Add Walkability index as a search parameter
   - Add user -> public comments or a rating system for each property
